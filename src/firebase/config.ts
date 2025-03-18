@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase } from 'firebase/database';
+import { getDatabase, Database } from 'firebase/database';
 
 // Firebase конфигурация
 const firebaseConfig = {
@@ -13,7 +13,7 @@ const firebaseConfig = {
 };
 
 // Инициализация Firebase (только на клиенте)
-let database = null;
+let database: Database | null = null;
 
 if (typeof window !== 'undefined') {
   try {
